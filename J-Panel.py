@@ -136,7 +136,7 @@ def tools():
                                 \x1b[38;2;0;212;14m║     \x1b[38;2;0;255;255mTools     \x1b[38;2;0;212;14m║
                 \x1b[38;2;0;212;14m╔═══════════════╩══════╦════════╩═══════════════╗
                 \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255mgeoip               \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255mreverse-dns           \x1b[38;2;0;212;14m║
-                \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255mreverseip           \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255m<empty>               \x1b[38;2;0;212;14m║  
+                \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255mreverseip           \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255mget-proxy             \x1b[38;2;0;212;14m║  
                 \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255msubnet-lookup       \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255m<empty>               \x1b[38;2;0;212;14m║
                 \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255masn-lookup          \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255m<empty>               \x1b[38;2;0;212;14m║
                 \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255mdns-lookup          \x1b[38;2;0;212;14m║  \x1b[38;2;0;255;255m<empty>               \x1b[38;2;0;212;14m║
@@ -266,15 +266,14 @@ def main():
                 print('Usage: https <url> <time>')
                 print('Example: https http://example.com 60')
 
-        elif "cf-bypass" in cnc:
+        elif "get-proxy" in cnc:
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
                 threads = cnc.split()[3]
-                os.system(f'node cf.js {url} {time} {threads}')
+                os.system(f'node getproxy.js')
             except IndexError:
-                print('Usage: cf-bypass <url> <time> <threads>')
-                print('Example: cf-bypass http://example-cloud.com 20 15')
+                print('proxy recieved')
 
         elif "https-bypass" in cnc:
             try:
