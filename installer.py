@@ -27,6 +27,9 @@ elif rn == '2':
 else:
     print("?")
 
+os.system("sudo apt install nodejs")
+os.system("npm i -g n")
+os.system("n stable")
 os.system("npm i events")
 os.system("npm i fs")
 os.system("npm i url")
